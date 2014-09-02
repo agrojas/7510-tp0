@@ -15,45 +15,72 @@ public class NodoConDato implements Nodo {
     protected Object dato;
     private Nodo siguiente = new NodoVacio(this);
 
-    public static NodoConDato nodoInicio() {
-        return new NodoConDato(null);
-    }
-
+    /**
+     *
+     * @param element
+     */
     public NodoConDato(Object element) {
         this.dato = element;
     }
 
+    /**
+     *
+     * @param nodo
+     */
     @Override
     public void setSiguiente(Nodo nodo) {
         this.siguiente = nodo;
-
     }
 
+    /**
+     *
+     * @param nodo
+     */
     @Override
     public void setSiguiente(NodoConDato nodo) {
         this.siguiente.setSiguiente(nodo);
 
     }
 
+    /**
+     *
+     * @param nodo
+     */
     @Override
     public void setSiguiente(NodoVacio nodo) {
         this.siguiente = nodo;
     }
 
+    /**
+     *
+     * @param nodo
+     */
     public void insertSiguiente(NodoConDato nodo) {
         this.siguiente = nodo;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Nodo getSiguiente() {
         return this.siguiente;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int size() {
         return (this.size + this.siguiente.size());
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Object getDato() {
         return this.dato;

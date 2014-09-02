@@ -5,7 +5,6 @@
  */
 package com.tdd.tp0;
 
-
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -15,14 +14,13 @@ import static org.junit.Assert.*;
  * @author agu
  */
 public class ColaTest {
-    
+
     Cola instance;
     String dato1;
     int dato2;
 
     public ColaTest() {
     }
-
 
     @Before
     public void setUp() {
@@ -31,7 +29,6 @@ public class ColaTest {
         instance = new Cola();
 
     }
-
 
     /**
      * Test of add method, of class Cola.
@@ -112,6 +109,9 @@ public class ColaTest {
         assertEquals(expResult, result);
     }
 
+    /**
+     * Test error al querer utilizar el metodo top de una cola vacia
+     */
     @Test(expected = AssertionError.class)
     public void testFailedTop() {
         System.out.println("FailedTop");
@@ -119,6 +119,9 @@ public class ColaTest {
         instance.top();
     }
 
+    /**
+     * Test error al querer utilizar el metodo erase de una cola vacia
+     */
     @Test(expected = AssertionError.class)
     public void testFailedErase() {
         System.out.println("Failed Erase");

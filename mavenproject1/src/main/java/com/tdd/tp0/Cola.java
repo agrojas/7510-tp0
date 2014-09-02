@@ -13,10 +13,10 @@ public class Cola implements Queue{
     /**
      * Inicio de la cola
      */
-    private NodoConDato inicio;
+    private NodoInicio inicio;
 
     public Cola() {
-        inicio = NodoConDato.nodoInicio();
+        inicio = NodoInicio.nuevoNodoInicio();
     }
 
     @Override

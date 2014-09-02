@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.tdd.tp0;
 
 import org.junit.After;
@@ -18,30 +17,36 @@ import static org.junit.Assert.*;
  * @author agu
  */
 public class NodoVacioTest {
-    
+
     public NodoVacioTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+
+    /**
+     *
+     */
+    @Test(expected = AssertionError.class)
+    public void testFailedGetSiguiente() {
+        NodoVacio nodo = new NodoVacio(null);
+        nodo.getSiguiente();
     }
 
+    /**
+     *
+     */
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testSize() {
+        NodoVacio nodo = new NodoVacio(null);
+        int result = nodo.size();
+        int expResult = 0;
+        assertEquals(expResult, result);
     }
-    
+
+    /**
+     *
+     */
+    @Test(expected = AssertionError.class)
+    public void testFailedGetDati() {
+        NodoVacio nodo = new NodoVacio(null);
+        nodo.getDato();
+    }
 }
